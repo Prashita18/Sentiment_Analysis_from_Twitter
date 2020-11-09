@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <title>Sentiment Analysis using Twitter API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #bgImage {
+        background-image: url('/static/icon.jpg');
+        height: 100%;
+        z-index: 0;
+    }
+
+    .container {
+        z-index: 9999999;
+        height: 80%;
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    input::placeholder {
+        font-weight: 700;
+        font-size: 1em;
+        font-style: italic;
+        letter-spacing: 1px;
+    }
+
+    .jumbotron {
+        background-color: rgba(100, 100, 100, 0.5);
+        color: aliceblue;
+    }
+</style>
+
+<body>
+    <div id="bgImage">
+        <div class="container" style="height: 90%;">
+            <div class="jumbotron" style="height: 32%;">
+                <h1 class="">Search through twitter to analyze tweets</h1>
+                <span>
+                    <h4><a style="color: white; text-decoration: underline" href="/twitter/">Home</a></h4>
+                </span>
+            </div>
+            <form action="{% url 'tweets' %}" method="GET">
+                <input type="text" class="form-control" name="searchQuery" placeholder="Enter keyword" size="50"
+                    required autofocus=true autocomplete="off"><br><br>
+                <input type="number" id="count" class="form-control" name="count" min="0" max="100"
+                    placeholder="number of tweets to process (less than 100)" required style="width: 100%;"><br>
+                <label style="color: blanchedalmond;" for="type" class="mr-2 d-inline-block"><strong>Type:
+                    </strong></label>
+                <select id="type" name="typeOfTweets" required class="form-control">
+                    <option value="mixed" selected>Mixed</option>
+                    <option value="popular">Most Popular</option>
+                    <option value="recent">Most Recent</option>
+                </select><br>
+                <input type="submit" class="form-control btn btn-danger" name="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

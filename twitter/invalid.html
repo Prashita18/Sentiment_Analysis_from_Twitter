@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error | Sentiment Analysis</title>
+    <link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
+        integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h3 style="font-weight: 400;">Could not find <em><b>{{ context.count }}</b></em> tweets for:
+                <em><b>{{ context.query }}</b></em></h3>
+        </div>
+        <h3><a class='btn btn-primary' href="{% url 'index' %}">Search Again..</a></h3>
+    </div>
+
+</body>
+
+</html>
